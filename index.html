@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Car Rental</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url('background.jpg');
+            background-size: cover;
+        }
+        #car {
+            position: absolute;
+            width: 250px;
+	    Top: 320px;
+            height: 230px;
+            background-color: transparent;
+            background-image: url('car.png');
+            background-size: cover;
+	    transform: rotate(-6deg);
+            animation: moveCar 5s linear infinite;
+        }
+        @keyframes moveCar {
+            0% { left: -100px; }
+            100% { left: 100%; }
+        }
+        #title {
+            position: absolute;
+            top: 10px;
+            left: 54%;
+            transform: translateX(-50%);
+            font-size: 52px;
+            color:darkgreen;
+            text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="title">TOP CAR RENTAL</div>
+    <div id="car"></div>
+</body>
+</html>
