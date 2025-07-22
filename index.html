@@ -118,6 +118,57 @@
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-6px); }
 }
+@media screen and (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  #title {
+    top: 20px;
+    font-size: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+  }
+
+  #car {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-6deg);
+    width: 160px;
+    height: 120px;
+    background-size: contain;
+    z-index: 1;
+  }
+
+  #policy {
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-height: 55vh;
+    padding: 15px;
+    font-size: 14px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2;
+  }
+
+  #policy h2 {
+    font-size: 18px;
+  }
+
+  #policy li {
+    font-size: 14px;
+  }
+
+  #policy ul li {
+    font-size: 13px;
+  }
+}
+
 
   </style>
 </head>
