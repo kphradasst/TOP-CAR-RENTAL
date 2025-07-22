@@ -1,44 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Car Rental</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-image: url('background.jpg');
-            background-size: cover;
-        }
-        #car {
-            position: absolute;
-            width: 250px;
-	    Top: 320px;
-            height: 230px;
-            background-color: transparent;
-            background-image: url('car.png');
-            background-size: cover;
-	    transform: rotate(-6deg);
-            animation: moveCar 5s linear infinite;
-        }
-        @keyframes moveCar {
-            0% { left: -100px; }
-            100% { left: 100%; }
-        }
-        #title {
-            position: absolute;
-            top: 10px;
-            left: 54%;
-            transform: translateX(-50%);
-            font-size: 52px;
-            color:darkgreen;
-            text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Car Rental</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-image: url('background.jpg');
+      background-size: cover;
+       font-family: Arial, sans-serif;
+    }
+
+    #title {
+      position: absolute;
+      top: 10px;
+      left: 54%;
+      transform: translateX(-50%);
+      font-size: 52px;
+      color: #28c103;
+      text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.7);
+      z-index: 2;
+    }
+
+    #car {
+      position: absolute;
+      width: 250px;
+      top: 320px;
+      height: 230px;
+      background-color: transparent;
+      background-image: url('car.png');
+      background-size: cover;
+      transform: rotate(-6deg);
+      animation: moveCar 15s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes moveCar {
+      0% { left: -100px; }
+      100% { left: 100%; }
+    }
+
+    /* === Glassmorphism Animated Policy Box === */
+    #policy {
+  position: absolute;
+  top: 100px;
+  left: 54%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  opacity: 0;
+  animation: slideDownFadeIn 6s ease-out forwards, floatPolicy 6s ease-in-out infinite;
+  transition: transform 3s ease, box-shadow 0.4s ease;
+  z-index: 3;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+#policy:hover {
+  transform: translateX(-50%) translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+#policy h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #e2ffe2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#policy ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#policy li {
+  margin-bottom: 16px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: #32f303;
+}
+
+#policy ul {
+  margin-top: 5px;
+  padding-left: 18px;
+}
+
+#policy ul li {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: #28c103;
+}
+
+/* Keep animations */
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes floatPolicy {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+  </style>
 </head>
 <body>
-    <div id="title">TOP CAR RENTAL</div>
-    <div id="car"></div>
+  <div id="title">TOP CAR RENTAL</div>
+  <div id="car"></div>
+
+  <div id="policy">
+  <h2>Customer Policy</h2>
+  <ol>
+    <li>
+      <strong>Security Deposit:</strong><br>
+      Php15,000. Refundable after rental. Deductions apply for:
+      <ul>
+        <li>Fuel shortage (charges per quarter tank):<br>
+          • Van: Php1,200<br>
+          • SUV/Pick-up: Php1,000<br>
+          • MPV/Crossover: Php800
+        </li>
+        <li>Unpaid tolls or dirty return: Php350 cleaning fee</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Insurance:</strong><br>
+      Top Car Rental has separate insurance. Third-party sites like Carflexi or Economy Car Rental are not covered.
+    </li>
+    <li>
+      <strong>Damage Liability:</strong><br>
+      Renter covers all damage/loss costs unless valid documentation is provided.
+    </li>
+    <li>
+      <strong>Excess Fee:</strong><br>
+      Max Php7,500 per incident (vehicle-only). Optional 3rd-party insurance: Php300/day.
+    </li>
+    <li>
+      <strong>Downtime Charges:</strong><br>
+      Up to 7 days of rental cost applies during vehicle repairs.
+    </li>
+    <li>
+      <strong>Claims Policy:</strong><br>
+      All claims must be settled directly with your booking provider.
+    </li>
+  </ol>
+</div>
+
 </body>
 </html>
